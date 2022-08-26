@@ -1,0 +1,113 @@
+DRIVER_SEX,CONTRIBUTING_FACTOR_1,PERC
+Female,1,0.0005085926732139496
+Female,80,0.010680446137492944
+Female,Accelerator Defective,0.10324431266243178
+Female,Aggressive Driving/Road Rage,0.1978425498802264
+Female,Alcohol Involvement,1.0288829779118203
+Female,Animals Action,0.15003483859811517
+Female,Backing Unsafely,5.052359615707376
+Female,Brakes Defective,0.514695785292517
+Female,Cell Phone (hand-held),0.053910823360678664
+Female,Cell Phone (hands-free),0.011189038810706892
+Female,Driver Inattention/Distraction,33.093616653358495
+Female,Driver Inexperience,2.860325194155253
+Female,Driverless/Runaway Vehicle,0.049333489301753124
+Female,Drugs (illegal),0.03865304316426017
+Female,Eating or Drinking,0.01830933623570219
+Female,Failure to Keep Right,0.1546121726570407
+Female,Failure to Yield Right-of-Way,10.456665361278805
+Female,Fatigued/Drowsy,0.1596980993891802
+Female,Fell Asleep,0.3377055350140626
+Female,Following Too Closely,11.684916667090492
+Female,Glare,0.40127961916580623
+Female,Headlights Defective,0.008137482771423194
+Female,Illness,0.17241291621952892
+Female,Lane Marking Improper/Inadequate,0.09764979325707834
+Female,Listening/Using Headphones,0.0030515560392836982
+Female,Lost Consciousness,0.13986298513383616
+Female,Obstruction/Debris,0.2741314508623189
+Female,Other Electronic Device,0.026446819007125383
+Female,Other Lighting Defects,0.012206224157134793
+Female,Other Vehicular,4.824510098107527
+Female,Outside Car Distraction,0.34482583243905784
+Female,Oversized Vehicle,0.24514166848912375
+Female,Passenger Distraction,0.3071899746212256
+Female,Passing Too Closely,3.921249510479552
+Female,Passing or Lane Usage Improper,4.985225382843135
+Female,Pavement Defective,0.17292150889274288
+Female,Pavement Slippery,1.4082931121294266
+Female,Pedestrian/Bicyclist/Other Pedestrian Error/Confusion,0.7745866413048453
+Female,Physical Disability,0.041196006530329926
+Female,Prescription Medication,0.013223409503562692
+Female,Reaction to Uninvolved Vehicle,2.681809165857157
+Female,Shoulders Defective/Improper,0.005594519405353446
+Female,Steering Failure,0.21157455205700307
+Female,Texting,0.0061031120785673965
+Female,Tinted Windows,0.011697631483920843
+Female,Tire Failure/Inadequate,0.1596980993891802
+Female,Tow Hitch Defective,0.0015257780196418491
+Female,Traffic Control Device Improper/Non-Working,0.08137482771423195
+Female,Traffic Control Disregarded,2.4620971310287305
+Female,Turning Improperly,3.1441199058086373
+Female,Unsafe Lane Changing,4.419670330229223
+Female,Unsafe Speed,1.3889665905472965
+Female,Using On Board Navigation Device,0.020852299601771936
+Female,Vehicle Vandalism,0.007120297424995295
+Female,View Obstructed/Limited,1.2450348640277489
+Female,Windshield Inadequate,0.0020343706928557985
+Male,1,0.0016052523858063586
+Male,80,0.009631514314838151
+Male,Accelerator Defective,0.0685442768739315
+Male,Aggressive Driving/Road Rage,0.4170445698324919
+Male,Alcohol Involvement,1.5654421266383607
+Male,Animals Action,0.11525712130089653
+Male,Backing Unsafely,4.767118010129143
+Male,Brakes Defective,0.4865519981379072
+Male,Cell Phone (hand-held),0.05088650063006156
+Male,Cell Phone (hands-free),0.007063110497547978
+Male,Driver Inattention/Distraction,32.26348612660625
+Male,Driver Inexperience,2.079764991050718
+Male,Driverless/Runaway Vehicle,0.06324694400077052
+Male,Drugs (illegal),0.09856249648851041
+Male,Eating or Drinking,0.012199918132128323
+Male,Failure to Keep Right,0.17625671196153814
+Male,Failure to Yield Right-of-Way,8.37412012103603
+Male,Fatigued/Drowsy,0.1523384514130234
+Male,Fell Asleep,0.47098104999558554
+Male,Following Too Closely,12.325769919175542
+Male,Glare,0.26807714842966185
+Male,Headlights Defective,0.01155781717780578
+Male,Illness,0.1518568756972815
+Male,Lane Marking Improper/Inadequate,0.09808092077276849
+Male,Listening/Using Headphones,0.003692080487354624
+Male,Lost Consciousness,0.14575691663121734
+Male,Obstruction/Debris,0.2924769846939185
+Male,Other Electronic Device,0.021028806254063295
+Male,Other Lighting Defects,0.01733672576670867
+Male,Other Vehicular,4.656516120747085
+Male,Outside Car Distraction,0.32811358765881965
+Male,Oversized Vehicle,1.0687770384698734
+Male,Passenger Distraction,0.47419155476719826
+Male,Passing Too Closely,4.44590700772929
+Male,Passing or Lane Usage Improper,5.59446508977374
+Male,Pavement Defective,0.1709593790883772
+Male,Pavement Slippery,1.3575619426764374
+Male,Pedestrian/Bicyclist/Other Pedestrian Error/Confusion,1.0970294804600653
+Male,Physical Disability,0.038847107736513876
+Male,Prescription Medication,0.012681493847870233
+Male,Reaction to Uninvolved Vehicle,2.404668073937925
+Male,Shoulders Defective/Improper,0.0065815347818060695
+Male,Steering Failure,0.20178022489585923
+Male,Texting,0.0033710300101933524
+Male,Tinted Windows,0.019423553868256938
+Male,Tire Failure/Inadequate,0.18412244865198932
+Male,Tow Hitch Defective,0.015731473380902312
+Male,Traffic Control Device Improper/Non-Working,0.07191530688412485
+Male,Traffic Control Disregarded,2.3701551476430884
+Male,Turning Improperly,2.964740631345763
+Male,Unsafe Lane Changing,4.500164538369545
+Male,Unsafe Speed,2.1924537085343245
+Male,Using On Board Navigation Device,0.01589199861948295
+Male,Vehicle Vandalism,0.0085078376447737
+Male,View Obstructed/Limited,1.275694071000313
+Male,Windshield Inadequate,0.004013130964515896
