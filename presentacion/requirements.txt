@@ -1,3 +1,4 @@
 plotly==5.9.0
 plotly-express==0.4.1
 folium==0.12.1.post1
+streamlit-folium==0.6.15
