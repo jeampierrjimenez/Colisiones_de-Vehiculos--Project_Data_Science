@@ -1,2 +1,2 @@
-plotly5.9.0-dev
-plotly-express0.4.1-dev
+plotly5.9.0
+plotly-express0.4.1
