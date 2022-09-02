@@ -46,13 +46,13 @@ st.plotly_chart(trace1) #grafico el barplot
 #PRUEBA DE MÉTRICA
 prom =df_day_crash.perc.mean()
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
-col1.metric("monday", df_day_crash.perc[0], df_day_crash.perc[0] - prom)
-col2.metric("tuesday", df_day_crash.perc[1], df_day_crash.perc[1] - prom)
-col3.metric("wednesday", df_day_crash.perc[2], df_day_crash.perc[2] - prom)
-col4.metric("thursday", df_day_crash.perc[3], df_day_crash.perc[3] - prom)
-col5.metric("friday", df_day_crash.perc[4], df_day_crash.perc[4] - prom)
-col6.metric("saturday", df_day_crash.perc[5], df_day_crash.perc[5] - prom)
-col7.metric("sunday", df_day_crash.perc[6], df_day_crash.perc[6] - prom)
+col1.metric("monday", rounf(df_day_crash.perc[0], 2), round(df_day_crash.perc[0] - prom, 2))
+col2.metric("tuesday", rounf(df_day_crash.perc[1], 2), round(df_day_crash.perc[1] - prom, 2))
+col3.metric("wednesday", rounf(df_day_crash.perc[2], 2), round(df_day_crash.perc[2] - prom, 2))
+col4.metric("thursday", rounf(df_day_crash.perc[3], 2), round(df_day_crash.perc[3] - prom, 2))
+col5.metric("friday", rounf(df_day_crash.perc[4], 2), round(df_day_crash.perc[4] - prom, 2))
+col6.metric("saturday", rounf(df_day_crash.perc[5], 2), round(df_day_crash.perc[5] - prom, 2))
+col7.metric("sunday", rounf(df_day_crash.perc[6], 2), round(df_day_crash.perc[6] - prom, 2))
 
 ###################################################################################################
 ####################################### kpi_month_crash_perc ######################################
