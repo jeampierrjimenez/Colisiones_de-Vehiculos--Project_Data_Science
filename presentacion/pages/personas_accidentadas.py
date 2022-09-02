@@ -92,6 +92,9 @@ if page == 'Visión General':
                 y="QTY_INJURED",
                 title ='Cantidad de Accidentados Lesionados 2012 - 2022'
             )
+            
+            trace1.update_xaxes(showgrid=False)
+            trace1.update_yaxes(showgrid=False)
 
             st.plotly_chart(trace1)
 
@@ -107,6 +110,9 @@ if page == 'Visión General':
                 y="QTY_KILLED",
                 title ='Cantidad de Accidentados Fallecidos 2012 - 2022'
             )
+            
+            trace2.update_xaxes(showgrid=False)
+            trace2.update_yaxes(showgrid=False)
         
             st.plotly_chart(trace2)
     
@@ -124,6 +130,9 @@ if page == 'Visión General':
                 y="QTY_BICYCLIST",
                 title ='Cantidad de Accidentados Ciclistas 2012 - 2022'
             )
+            
+            trace3.update_xaxes(showgrid=False)
+            trace3.update_yaxes(showgrid=False)
         
             st.plotly_chart(trace3)
     
@@ -139,6 +148,9 @@ if page == 'Visión General':
                 y="QTY_PEDESTRIAN",
                 title ='Cantidad de Accidentados Peatones 2012 - 2022'
             )
+            
+            trace4.update_xaxes(showgrid=False)
+            trace4.update_yaxes(showgrid=False)
         
             st.plotly_chart(trace4)
 
@@ -167,6 +179,10 @@ elif page == 'Condición del accidentado':
             
             fig1 = px.line(data_by_year_injury, x=mes_injury, y=injured)
             fig1.layout.title = f'Cantidad de Accidentados Lesionados - {choose_year_injury}'
+            
+            fig1.update_xaxes(showgrid=False)
+            fig1.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig1)
 
         plot_lesionados_mensual(choose_year_injury, injury)
@@ -183,6 +199,10 @@ elif page == 'Condición del accidentado':
             
             fig2 = px.line(data_by_year_injury, x=mes_injury, y=killed)
             fig2.layout.title = f'Cantidad de Accidentados Fallecidos - {choose_year_injury}'
+            
+            fig2.update_xaxes(showgrid=False)
+            fig2.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig2)
 
         plot_fallecidos_mensual(choose_year_injury, injury)
@@ -199,6 +219,10 @@ elif page == 'Condición del accidentado':
             
             fig3 = px.line(data_by_year_injury, x=mes_injury, y=unspecified)
             fig3.layout.title = f'Cantidad de Accidentados Sin Especificar - {choose_year_injury}'
+            
+            fig3.update_xaxes(showgrid=False)
+            fig3.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig3)
     
         plot_sinesp_mensual(choose_year_injury, injury)
@@ -226,6 +250,10 @@ elif page == 'Sexo del accidentado':
             
             fig4 = px.line(data_by_year_sex, x=mes_sex, y=male)
             fig4.layout.title = f'Cantidad de Accidentados Hombres - {choose_year_sex}'
+            
+            fig4.update_xaxes(showgrid=False)
+            fig4.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig4)
 
         plot_hombres_mensual(choose_year_sex, sex)
@@ -242,6 +270,10 @@ elif page == 'Sexo del accidentado':
             
             fig5 = px.line(data_by_year_sex, x=mes_sex, y=female)
             fig5.layout.title = f'Cantidad de Accidentados Mujeres - {choose_year_sex}'
+            
+            fig5.update_xaxes(showgrid=False)
+            fig5.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig5)
 
         plot_mujeres_mensual(choose_year_sex, sex)
@@ -258,6 +290,10 @@ elif page == 'Sexo del accidentado':
 
             fig6 = px.line(data_by_year_sex, x=mes_sex, y=undefined)
             fig6.layout.title = f'Cantidad de Accidentados Sexo No Especifica - {choose_year_sex}'
+            
+            fig6.update_xaxes(showgrid=False)
+            fig6.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig6)
 
         plot_nodef_mensual(choose_year_sex, sex)
@@ -284,6 +320,10 @@ elif page == 'Rol del accidentado':
             
             fig7 = px.line(data_by_year_type, x=mes_type, y=bicyclist)
             fig7.layout.title = f'Cantidad de Accidentados Ciclistas - {choose_year_type}'
+            
+            fig7.update_xaxes(showgrid=False)
+            fig7.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig7)
 
         plot_ciclista_mensual(choose_year_type, type)
@@ -300,6 +340,10 @@ elif page == 'Rol del accidentado':
             
             fig8 = px.line(data_by_year_type, x=mes_type, y=pedestrian)
             fig8.layout.title = f'Cantidad de Accidentados Peatones - {choose_year_type}'
+            
+            fig8.update_xaxes(showgrid=False)
+            fig8.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig8)
 
         plot_peaton_mensual(choose_year_type, type)
@@ -316,6 +360,10 @@ elif page == 'Rol del accidentado':
             
             fig9 = px.line(data_by_year_type, x=mes_type, y=occupant)
             fig9.layout.title = f'Cantidad de Accidentados Ocupantes - {choose_year_type}'
+            
+            fig9.update_xaxes(showgrid=False)
+            fig9.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig9)
 
         plot_ocupante_mensual(choose_year_type, type)
@@ -332,6 +380,10 @@ elif page == 'Rol del accidentado':
             
             fig10 = px.line(data_by_year_type, x=mes_type, y=other_motorized)
             fig10.layout.title = f'Cantidad de Accidentados Otros Motorizados - {choose_year_type}'
+            
+            fig10.update_xaxes(showgrid=False)
+            fig10.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig10)
 
         plot_otro_mensual(choose_year_type, type)
@@ -369,6 +421,10 @@ else:
             
             fig11 = px.line(data_by_year_status, x=mes_status, y=apparent_death)
             fig11.layout.title = f'Cantidad de Accidentados en Estado de Muerte Aparente - {choose_year_status}'
+            
+            fig11.update_xaxes(showgrid=False)
+            fig11.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig11)
 
         plot_muer_apa_mensual(choose_year_status, status)
@@ -385,6 +441,10 @@ else:
             
             fig12 = px.line(data_by_year_status, x=mes_status, y=conscious)
             fig12.layout.title = f'Cantidad de Accidentados en estado de Consciencia - {choose_year_status}'
+            
+            fig12.update_xaxes(showgrid=False)
+            fig12.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig12)
 
         plot_consciencia_mensual(choose_year_status, status)
@@ -401,6 +461,10 @@ else:
             
             fig13 = px.line(data_by_year_status, x=mes_status, y=does_not_apply)
             fig13.layout.title = f'Cantidad de Accidentados en estado N/A - {choose_year_status}'
+            
+            fig13.update_xaxes(showgrid=False)
+            fig13.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig13)
 
         plot_not_apply_mensual(choose_year_status, status)
@@ -417,6 +481,10 @@ else:
             
             fig14 = px.line(data_by_year_status, x=mes_status, y=incoherent)
             fig14.layout.title = f'Cantidad de Accidentados en estado de Incoherencia - {choose_year_status}'
+            
+            fig14.update_xaxes(showgrid=False)
+            fig14.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig14)
 
         plot_incoherencia_mensual(choose_year_status, status)
@@ -433,6 +501,10 @@ else:
             
             fig15 = px.line(data_by_year_status, x=mes_status, y=semiconscious)
             fig15.layout.title = f'Cantidad de Accidentados en estado de Semi-consciencia - {choose_year_status}'
+            
+            fig15.update_xaxes(showgrid=False)
+            fig15.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig15)
 
         plot_semiconsciencia_mensual(choose_year_status, status)
@@ -449,6 +521,10 @@ else:
             
             fig16 = px.line(data_by_year_status, x=mes_status, y=shock)
             fig16.layout.title = f'Cantidad de Accidentados en estado de Shock - {choose_year_status}'
+            
+            fig16.update_xaxes(showgrid=False)
+            fig16.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig16)
 
         plot_shock_mensual(choose_year_status, status)
@@ -465,6 +541,10 @@ else:
             
             fig17 = px.line(data_by_year_status, x=mes_status, y=unconscious)
             fig17.layout.title = f'Cantidad de Accidentados en estado de Inconsciencia - {choose_year_status}'
+            
+            fig17.update_xaxes(showgrid=False)
+            fig17.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig17)
 
         plot_inconsciencia_mensual(choose_year_status, status)
@@ -481,6 +561,10 @@ else:
             
             fig18 = px.line(data_by_year_status, x=mes_status, y=unknown)
             fig18.layout.title = f'Cantidad de Accidentados en estado Desconocido - {choose_year_status}'
+            
+            fig18.update_xaxes(showgrid=False)
+            fig18.update_yaxes(showgrid=False)
+            
             st.plotly_chart(fig18)
 
         plot_desconocido_mensual(choose_year_status, status)
