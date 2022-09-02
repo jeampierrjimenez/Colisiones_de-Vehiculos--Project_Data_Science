@@ -4,7 +4,7 @@ import plotly.express as px
 import requests
 
 def truncado(num):
-    a_trunc = trunc(round((num/1000), 3))
+    a_trunc = int(round((num/1000), 3))
     a_trunc = str(a_trunc) + 'k'
     return a_trunc
 
