@@ -46,13 +46,13 @@ st.plotly_chart(trace1) #grafico el barplot
 #PRUEBA DE MÉTRICA
 prom =df_day_crash.perc.mean()
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
-col1.metric("monday", round(df_day_crash.collision_count[0], 2), round(df_day_crash.collision_count[0] - prom, 2))
-col2.metric("tuesday", round(df_day_crash.collision_count[1], 2), round(df_day_crash.collision_count[1] - prom, 2))
-col3.metric("wednesday", round(df_day_crash.collision_count[2], 2), round(df_day_crash.collision_count[2] - prom, 2))
-col4.metric("thursday", round(df_day_crash.collision_count[3], 2), round(df_day_crash.collision_count[3] - prom, 2))
-col5.metric("friday", round(df_day_crash.collision_count[4], 2), round(df_day_crash.collision_count[4] - prom, 2))
-col6.metric("saturday", round(df_day_crash.collision_count[5], 2), round(df_day_crash.collision_count[5] - prom, 2))
-col7.metric("sunday", round(df_day_crash.collision_count[6], 2), round(df_day_crash.collision_count[6] - prom, 2))
+col1.metric("monday", round(df_day_crash.collision_count[0], 2), round(df_day_crash.perc[0] - prom, 2))
+col2.metric("tuesday", round(df_day_crash.collision_count[1], 2), round(df_day_crash.perc[1] - prom, 2))
+col3.metric("wednesday", round(df_day_crash.collision_count[2], 2), round(df_day_crash.perc[2] - prom, 2))
+col4.metric("thursday", round(df_day_crash.collision_count[3], 2), round(df_day_crash.perc[3] - prom, 2))
+col5.metric("friday", round(df_day_crash.collision_count[4], 2), round(df_day_crash.perc[4] - prom, 2))
+col6.metric("saturday", round(df_day_crash.collision_count[5], 2), round(df_day_crash.perc[5] - prom, 2))
+col7.metric("sunday", round(df_day_crash.collision_count[6], 2), round(df_day_crash.perc[6] - prom, 2))
 
 ###################################################################################################
 ####################################### kpi_month_crash_perc ######################################
