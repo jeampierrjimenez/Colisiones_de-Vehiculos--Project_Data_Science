@@ -72,6 +72,9 @@ if page == 'Visión General':
                 y="QTY_TOTAL",
                 title ='Cantidad de Accidentados 2012 - 2022'
             )
+            
+            tracetotal.update_xaxes(showgrid=False)
+            tracetotal.update_yaxes(showgrid=False)
 
             st.plotly_chart(tracetotal)
 
