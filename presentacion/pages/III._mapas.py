@@ -10,7 +10,7 @@ import plotly.express as px
 
 anio = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
 
-mes = [6,1,2,3,4,5,7,8,9,10,11,12]
+mes = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 barrios = ('BRONX', 'BROOKLYN', 'STATEN ISLAND', 'MANHATTAN', 'QUEENS')
 
@@ -81,6 +81,8 @@ def graficar_barras_trafico(df):
 tab1, tab2 = st.tabs(["Mapa de accidentes", "Mapa de volumen de trafico"])
 
 with tab1:
+    mes1 = 6
+    anio1 = 2016
     barrio1 = st.selectbox(
         'Barrio ',
         barrios)
