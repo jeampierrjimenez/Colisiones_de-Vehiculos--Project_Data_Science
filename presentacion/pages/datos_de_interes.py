@@ -35,7 +35,7 @@ df_licences = pd.DataFrame(response_licences.json()['data'])
 df_licences_clean = df_licences.loc[df_licences['driver_license_jurisdiction'] != 'Unknown']
 
 def grafico_licencias_estados(df, anio):
-  df = df.loc[(df['year'] == anio)&(df['driver_license_jurisdiction'] == 'NY')]
+  df = df.loc[(df['year'] == anio)&(df['driver_license_jurisdiction'] != 'NY')]
   df = df.sort_values('qty', ascending=False)
   fig = px.bar(df.head(), x = 'driver_license_jurisdiction', y='qty', color='driver_license_jurisdiction')
   return fig
@@ -62,7 +62,7 @@ with st.sidebar:
     anios)
 
 
-tab1, tab2, tab3 = st.tabs(['Factores que contribuyen a los accidentes', "Origen de las licencias por accidente(solo emitidas fuera de Nueva York)", "Daño a la propiedad"])
+tab1, tab2, tab3 = st.tabs(['Factores que contribuyen a los accidentes', "Origen de las licencias por accidente", "Daño a la propiedad"])
 with tab1:
   try:
     st.plotly_chart(grafico_para_factores(df_factores_clean, anio, 'Ambos'))
