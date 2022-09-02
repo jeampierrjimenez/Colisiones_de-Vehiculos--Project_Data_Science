@@ -148,7 +148,7 @@ df_colisiones_zone.sort_values(by = ["borough", "year", "month"], ascending = Fa
 df_colisiones_zone = df_colisiones_zone[["borough", "collision_count"]]
 grupo = df_colisiones_zone.groupby(["borough"]).sum()
 grupo.reset_index(inplace = True)
-grupo.sort_values("collision_count", inplace = True)
+grupo.sort_values("collision_count", inplace = True, ascending = False)
 grupo = grupo[grupo["borough"] != "Unknown"] # me quedo solo con los barios que estan definidos
 
 st.markdown("Cruiosidad: Historicamente el barrio de Nueva York con mayor cantidad de colisiones es Brooklyn, esto se puede explicar sabiendo que Brooklyn es el barrio con mayor densidad de trafico de la ciudad")
