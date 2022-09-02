@@ -76,20 +76,6 @@ def graficar_barras_trafico(df):
   return fig
 
 
-def crear_dataframe_colisiones(año, mes, barrio):
-    url = 'http://vps-2671696-x.dattaweb.com/collision/collisions_boro_year_month/' + barrio + '/' + str(año) + '/' + str(mes) + '/'
-    response = requests.get(url)
-    df_json = pd.DataFrame(response.json()['data'])
-    return df_json
-
-def graficar_barras_trafico(df):
-  df = df.groupby('on_street_name')['unique_id'].sum().reset_index()
-  df = df.sort_values('unique_id', ascending=False)
-  fig = px.bar(df.head(), x = 'on_street_name', y='vol', color='on_street_name')
-  return fig
-
-
-
 
 
 tab1, tab2 = st.tabs(["Mapa de accidentes", "Mapa de volumen de trafico"])
