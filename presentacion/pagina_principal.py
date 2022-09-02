@@ -4,7 +4,7 @@ import plotly.express as px
 import requests
 
 
-st.title("# Colisiones y Tráfico en New York")
+st.title("NYC tránsito y siniestros viales")
 #st.sidebar.markdown("# Presentación ")
 
 st.subheader("¿Sabías que en la ciudad de Nueva York se produce un choque aproximadamente cada 2 minutos?")
