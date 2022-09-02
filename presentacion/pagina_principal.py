@@ -12,6 +12,8 @@ def truncado(num):
 st.title("NYC tránsito y siniestros viales")
 #st.sidebar.markdown("# Presentación ")
 
+st.image("https://agenciaajn.com/new/wp-content/uploads/2019/08/ny.jpg", caption='Times Square, Nueva York')
+
 st.subheader("¿Sabías que en la ciudad de Nueva York se produce un choque aproximadamente cada 2 minutos?")
 
 st.markdown("El objetivo de este estudio es analizar los datos sobre esta ciudad para determinar, por ejemplo, cuales son los causantes de siniestros viales mas comunes, dia y hora de mayor densidad de trafico, etc.")
