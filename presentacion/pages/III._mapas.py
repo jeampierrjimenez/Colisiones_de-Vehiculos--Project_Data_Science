@@ -81,8 +81,6 @@ def graficar_barras_trafico(df):
 tab1, tab2 = st.tabs(["Mapa de accidentes", "Mapa de volumen de trafico"])
 
 with tab1:
-    mes1 = 6
-    anio1 = 2016
     barrio1 = st.selectbox(
         'Barrio ',
         barrios)
