@@ -62,6 +62,7 @@ def mapa_trafico_anio_mes_barrio_api(año, mes, barrio):
   else:
     return 0
 
+
 def crear_dataframe_trafico(año, mes, barrio):
     url = 'http://vps-2671696-x.dattaweb.com/traffic/boro_year_month_alt/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
     response = requests.get(url)
@@ -69,10 +70,23 @@ def crear_dataframe_trafico(año, mes, barrio):
     return df_json
 
 def graficar_barras_trafico(df):
+  df = df.groupby('street')['vol'].sum().reset_index()
   df = df.sort_values('vol', ascending=False)
-  fig = px.bar(df, x = 'street', y='vol', color='street')
+  fig = px.bar(df.head(), x = 'street', y='vol', color='street')
   return fig
 
+
+def crear_dataframe_colisiones(año, mes, barrio):
+    url = 'http://vps-2671696-x.dattaweb.com/collision/collisions_boro_year_month/' + barrio + '/' + str(año) + '/' + str(mes) + '/'
+    response = requests.get(url)
+    df_json = pd.DataFrame(response.json()['data'])
+    return df_json
+
+def graficar_barras_trafico(df):
+  df = df.groupby('on_street_name')['unique_id'].sum().reset_index()
+  df = df.sort_values('unique_id', ascending=False)
+  fig = px.bar(df.head(), x = 'on_street_name', y='vol', color='on_street_name')
+  return fig
 
 
 
@@ -117,7 +131,5 @@ with tab2:
         st.plotly_chart(grafico)
     else:
         st.write('No hay datos que mostrar.')
-
-
 
 
