@@ -51,7 +51,7 @@ st.plotly_chart(trace1) #grafico el barplot
 #PRUEBA DE MÉTRICA
 prom =df_day_crash.perc.mean()
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
-col1.metric("monday", truncado(collision_count[0]), round(df_day_crash.perc[0] - prom, 2))
+col1.metric("monday", truncado(df_day_crash.collision_count[0]), round(df_day_crash.perc[0] - prom, 2))
 col2.metric("tuesday", round(df_day_crash.collision_count[1], 2), round(df_day_crash.perc[1] - prom, 2))
 col3.metric("wednesday", round(df_day_crash.collision_count[2], 2), round(df_day_crash.perc[2] - prom, 2))
 col4.metric("thursday", round(df_day_crash.collision_count[3], 2), round(df_day_crash.perc[3] - prom, 2))
