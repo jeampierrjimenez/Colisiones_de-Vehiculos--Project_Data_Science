@@ -144,7 +144,7 @@ grupo.reset_index(inplace = True)
 grupo.sort_values("collision_count", inplace = True)
 grupo = grupo[grupo["borough"] != "Unknown"] # me quedo solo con los barios que estan definidos
 
-st.markdown("Cruiosidad: Historicamente el barrio de Nueva York con mayor cantidad de colisiones es Brooklyn, <explicar por que creemos que puede ser el barrio con mayor cantidad de colisiones>")
+st.markdown("Cruiosidad: Historicamente el barrio de Nueva York con mayor cantidad de colisiones es Brooklyn, esto se puede explicar sabiendo que Brooklyn es el barrio con mayor densidad de trafico de la ciudad")
 
 # grafico con plotly
 trace4 = px.bar(
