@@ -28,6 +28,15 @@ barrios = ('BRONX', 'BROOKLYN', 'STATEN ISLAND', 'MANHATTAN', 'QUEENS')
 
 
 def mapa_anio_mes_barrio_api(año, mes, barrio):
+  '''
+  Parametros:
+    Los 3 parametros se utilizan para el request. La url ya trae un json limitado por año, mes y barrio 
+    pero es necesario pasar los parametros como parte de la url.
+    
+  Utilidad:
+    Esta funcion, con los parametros anteriores, llama a la api para crear un dataframe que con coordenadas realiza un mapa de calor 
+    en el estado correspondiente limitando los datos a las fechas llamadas.
+  '''
   # Llamo a la api con los valores de la funcion y creo el df
   url = 'http://vps-2671696-x.dattaweb.com/collision/collisions_boro_year_month/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
   response = requests.get(url)
@@ -52,6 +61,15 @@ def mapa_anio_mes_barrio_api(año, mes, barrio):
     return 0
 
 def mapa_trafico_anio_mes_barrio_api(año, mes, barrio):
+  '''
+  Parametros:
+    Los 3 parametros se utilizan para el request. La url ya trae un json limitado por año, mes y barrio 
+    pero es necesario pasar los parametros como parte de la url.
+    
+  Utilidad:
+    Esta funcion, con los parametros anteriores, llama a la api para crear un dataframe que con coordenadas realiza un mapa de calor 
+    en el estado correspondiente limitando los datos a las fechas llamadas.
+  '''
   # Llamo a la api con los valores de la funcion y creo el df
   url = 'http://vps-2671696-x.dattaweb.com/traffic/boro_year_month_alt/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
   response = requests.get(url)
@@ -76,12 +94,19 @@ def mapa_trafico_anio_mes_barrio_api(año, mes, barrio):
 
 
 def crear_dataframe_trafico(año, mes, barrio):
+  '''
+  Utilidad = Crea un dataframe llamando a la api de volumen de tráfico con los parametros que reciba.
+  '''
     url = 'http://vps-2671696-x.dattaweb.com/traffic/boro_year_month_alt/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
     response = requests.get(url)
     df_json = pd.DataFrame(response.json()['data'])
     return df_json
 
 def graficar_barras_trafico(df):
+  '''
+  Utilidad = Recibe un dataframe (idealmente creado a partir de la funcion 'crear_dataframe_trafico' para cumplir con los features)
+  y realiza un gráfico de barras ordenando por calle con mayor volumen de trafico.
+  '''
   df = df.groupby('street')['vol'].sum().reset_index()
   df = df.sort_values('vol', ascending=False)
   fig = px.bar(df.head(), x = 'street', y='vol', color='street')
