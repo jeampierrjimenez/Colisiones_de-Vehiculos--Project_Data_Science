@@ -1,3 +1,15 @@
+'''
+Este es el script de la pestaña en la que se muestran los graficos relacionados al dataset de los vehiculos involucrados en los accidentes.
+Aca mismo se definen funciones para llamar a la api de los datos simplificados y se los usa para graficar la información de interes.
+
+Las librerias que se usan son streamlit, pandas, plotly.expres, requests, streamlit_folium, folium y folium.plugins(Heatmap).
+
+Los requests son realizados a la api: http://vps-2671696-x.dattaweb.com/swagger/
+
+Dentro de cada función se detalla su utilidad y los parametreos que reciben. Este es el listado de las mismas:
+mapa_anio_mes_barrio_api, mapa_trafico_anio_mes_barrio_api, crear_dataframe_trafico, graficar_barras_trafico.
+'''
+
 import requests
 import pandas as pd
 import streamlit as st
