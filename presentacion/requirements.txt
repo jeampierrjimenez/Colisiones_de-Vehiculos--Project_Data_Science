@@ -4,3 +4,5 @@ folium==0.12.1.post1
 streamlit-folium==0.6.15
 geopandas==0.10.2
 Shapely==1.8.4
+scikit-learn==1.0.2
+
