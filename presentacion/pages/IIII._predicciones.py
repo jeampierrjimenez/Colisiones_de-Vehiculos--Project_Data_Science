@@ -18,7 +18,7 @@ def estado_calles(barrio, hora, df):
     filename = "presentacion/pages/modelo.sav "
     #tree = pickle.load(open(filename, 'rb'))
     tree = None
-    st.write(os.path)
+    st.write(os.getcwd())
     estado = tree.predict(predecir)
     resultado = pd.DataFrame()
     resultado['street_le'] = predecir.street_le
