@@ -3,18 +3,17 @@ import numpy as np
 import pickle
 import plotly.express as px
 import streamlit as st
+import requests
 
-# url = "http://vps-2671696-x.dattaweb.com/traffic/model/"
-# response = requests.get(url, timeout=0.5)
-# df = pd.DataFrame(response.json()["data"])
 
-df = pd.read_csv(r"C:\Users\franc\OneDrive\Documentos\Henry\proyectos\PROYECTO_GRUPAL\SEMANA 4\calle_barrio_le.csv")
+
+# df = pd.read_csv(r"C:\Users\franc\OneDrive\Documentos\Henry\proyectos\PROYECTO_GRUPAL\SEMANA 4\calle_barrio_le.csv")
 
 def estado_calles(barrio, hora, df):
 
-    predecir = df[df.Boro_le == barrio]
+    predecir = df[df.boro_le == barrio]
     predecir['hora'] = hora
-    predecir = predecir[['hora', 'Boro_le', 'street_le']].drop_duplicates()
+    predecir = predecir[['hora', 'boro_le', 'street_le']].drop_duplicates()
 
     filename = r"C:\Users\franc\OneDrive\Documentos\Henry\proyectos\PROYECTO_GRUPAL\SEMANA 4\modelo.sav"
     tree = pickle.load(open(filename, 'rb'))
@@ -34,8 +33,11 @@ def estado_calles(barrio, hora, df):
 
 # res = estado_calles(0, 16, df)
 
-barrio = st.selectbox('barrio', ("Manhattan", "Queens", "Bronx", "Staten Island", "Brooklyn"))
+url = "http://vps-2671696-x.dattaweb.com/traffic/model/"
+response = requests.get(url, timeout=0.5)
+df = pd.DataFrame(response.json()["data"])
 
+barrio = st.selectbox('barrio', ("Manhattan", "Queens", "Bronx", "Staten Island", "Brooklyn"))
 hora = st.selectbox('hora', (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23))
 
 if(barrio == "Brooklyn"):
