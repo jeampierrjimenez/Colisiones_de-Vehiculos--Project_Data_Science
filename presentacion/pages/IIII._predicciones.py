@@ -15,7 +15,7 @@ def estado_calles(barrio, hora, df):
     predecir['hora'] = hora
     predecir = predecir[['hora', 'boro_le', 'street_le']].drop_duplicates()
 
-    filename = "./Colisiones_de-Vehiculos--Project_Data_Science/presentacion/pages/modelo.sav"
+    filename = Path(__file__).parents[0]/"modelo.sav"
     tree = pickle.load(open(filename, 'rb'))
 
     estado = tree.predict(predecir)
