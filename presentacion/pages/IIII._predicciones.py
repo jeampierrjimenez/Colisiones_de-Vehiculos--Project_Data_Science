@@ -51,4 +51,4 @@ elif(barrio == "Bronx"):
 elif(barrio == "Manhattan"):
     barrio = 2
 
-st.table(estado_calles(barrio, hora, df).reset_index(drop = True))
+st.table(estado_calles(barrio, hora, df))
