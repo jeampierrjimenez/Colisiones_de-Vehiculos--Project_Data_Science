@@ -97,10 +97,10 @@ def crear_dataframe_trafico(año, mes, barrio):
   '''
   Utilidad = Crea un dataframe llamando a la api de volumen de tráfico con los parametros que reciba.
   '''
-    url = 'http://vps-2671696-x.dattaweb.com/traffic/boro_year_month_alt/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
-    response = requests.get(url)
-    df_json = pd.DataFrame(response.json()['data'])
-    return df_json
+  url = 'http://vps-2671696-x.dattaweb.com/traffic/boro_year_month_alt/' + barrio + '/' + str(año) + '/' + str(mes) + '/' 
+  response = requests.get(url)
+  df_json = pd.DataFrame(response.json()['data'])
+  return df_json
 
 def graficar_barras_trafico(df):
   '''
