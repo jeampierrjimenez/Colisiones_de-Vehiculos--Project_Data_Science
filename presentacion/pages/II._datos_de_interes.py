@@ -1,10 +1,8 @@
 '''
 Este es el script de la pestaña en la que se muestran los graficos relacionados al dataset de los vehiculos involucrados en los accidentes.
 Aca mismo se definen funciones para llamar a la api de los datos simplificados y se los usa para graficar la información de interes.
-
 Las librerias que se usan son streamlit, pandas, plotly.expres y requests.
 Los requests realizados son a la api: http://vps-2671696-x.dattaweb.com/swagger/
-
 Dentro de cada función se detalla su utilidad y los parametreos que reciben. Este es el listado de las mismas:
 grafico_para_factores, grafico_licencias_estados, crear_df_danio, grafico_daño_propiedad.
 '''
@@ -13,6 +11,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import requests
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 anios = [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022]
 
@@ -48,6 +48,51 @@ def grafico_para_factores(df, anio, sexo):
     return fig2
   else:
     return fig3
+
+#-------------------------------------------------------------------------- GRAFICA PARETO
+
+# fig, ax = plt.subplots()
+# ax.bar(data_m["contributing_factor"].head(), data_m["qty"], color="C0")
+# ax2 = ax.twinx()
+# ax2.plot(df.index, df["cumpercentage"], color="C1", marker="o", ms=5)
+
+
+# plt.show() 
+
+
+
+
+def grafico_pareto(df, anio):
+  '''
+  Parametros:
+    df = Es el dataframe que recibe para realizar el grafico correspondiente. 
+      Deberia pasarse el dataframe sacado de la variable url_factores ya que cumple con los features que utiliza la función.
+    anio = Limita el dataframe a los que corresponden a ese año.
+    sexo = Es un parametro que permite limitar el grafico por el parametro sexo del dataframe.
+    
+  Utilidad:
+    Esta funcion, con los parametros anteriores, realiza un grafico pareto que representa el top 5 de los factores que contribuyen a los accidentes.
+    El hecho de que sea pareto muestra que el la minoria de las causas representa la mayoria de los accidentes
+  '''
+  df = df.loc[df['crash_year'] == anio]
+  data_g = df.groupby('contributing_factor')['qty'].sum().reset_index().sort_values('qty', ascending=False)
+  
+  tot = data_g["qty"].sum()
+
+  fig3 = make_subplots(specs=[[{"secondary_y": True}]])
+
+  fig3.add_trace(
+    go.Bar(x = data_g['contributing_factor'].head(), y = data_g['qty'].head(),  name="Factores", yaxis = "y1") #, colorscale = "viridis"
+  )
+
+  fig3.add_trace(
+    go.Scatter(x = data_g['contributing_factor'].head(), y = (100 - (data_g["qty"].head() / tot)), name = "Linea Pareto", yaxis = "y2")
+  )
+  
+  return fig3
+
+
+
 
 #---------------------------------------------------------------------------Licencias por estado
 url_licences = 'http://vps-2671696-x.dattaweb.com/collision/licence_state/'
@@ -107,6 +152,7 @@ def grafico_daño_propiedad(anio):
   fig = px.bar(df, x = 'crash_time', y='qty', color='crash_time')
   return fig
 
+
 #-------------------------------------------------------------------------- STREAMLIT
 with st.sidebar:
   anio = st.selectbox(
@@ -119,6 +165,11 @@ with tab1:
   try:
     st.plotly_chart(grafico_para_factores(df_factores_clean, anio, 'Ambos'))
   except:
+    st.write('No hay datos que mostrar.')  
+  try:
+    st.title("Grafica pareto")
+    st.plotly_chart(grafico_pareto(df_factores_clean, anio))
+  except:
     st.write('No hay datos que mostrar.')
 with tab2:
   try:
@@ -130,12 +181,6 @@ with tab3:
     st.plotly_chart(grafico_daño_propiedad(anio))
   except:
     st.write('No hay datos que mostrar.')
-
-
-
-
-
-
 
 
 
