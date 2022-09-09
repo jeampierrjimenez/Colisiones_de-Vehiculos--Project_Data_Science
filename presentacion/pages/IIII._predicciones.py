@@ -9,6 +9,19 @@ import requests
 
 # df = pd.read_csv(r"C:\Users\franc\OneDrive\Documentos\Henry\proyectos\PROYECTO_GRUPAL\SEMANA 4\calle_barrio_le.csv")
 
+def vol_enc_cat(vol):
+    if vol == 0: 
+        return 'liberado'
+    elif vol == 1:
+        return 'bajo'
+    elif vol == 2:
+        return 'moderado'
+    elif vol == 3:
+        return 'alto'
+    elif vol == 4:
+        return 'muy alto'
+
+
 def estado_calles(barrio, hora, df):
 
     predecir = df[df.boro_le == barrio]
@@ -26,6 +39,8 @@ def estado_calles(barrio, hora, df):
     resultado = resultado[["street", "estado"]]
 
     resultado = resultado.drop_duplicates()
+    
+    resultado['estado'] = resultado['estado'].apply(lambda x: vol_enc_cat(x))
 
     return resultado.sort_values("estado", ascending = False)
 
