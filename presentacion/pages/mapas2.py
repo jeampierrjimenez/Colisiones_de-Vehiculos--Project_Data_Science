@@ -5,6 +5,7 @@ from streamlit_folium import st_folium
 import folium
 from folium import plugins
 from folium.plugins import HeatMap
+from folium.plugins import MarkerCluster
 
 
 anio = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
