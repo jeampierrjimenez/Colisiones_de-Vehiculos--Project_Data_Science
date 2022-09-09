@@ -65,11 +65,6 @@ def mapa_trafico_anio_mes_barrio_api(año, mes, barrio):
   
   graficar_marker(l[0], 'volumen prom. (del barrio): ' + str(vol) + ' a/h.').add_to(clust)
 
-
-  '''
-  for i in l:
-    graficar_marker(i, 'volumen prom. (del barrio): ' + str(vol) + ' a/h.').add_to(clust)
-  '''
   
   return clust
 
