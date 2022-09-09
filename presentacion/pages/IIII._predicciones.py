@@ -73,5 +73,6 @@ elif(barrio == "Bronx"):
 elif(barrio == "Manhattan"):
     barrio = 2
 
-st.table(estado_calles(barrio, hora, df))
 st.table(tabla_guia)
+st.table(estado_calles(barrio, hora, df))
+
