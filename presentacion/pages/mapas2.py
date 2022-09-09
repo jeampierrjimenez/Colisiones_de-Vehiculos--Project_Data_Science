@@ -11,7 +11,7 @@ anio = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
 
 mes = [6,1,2,3,4,5,7,8,9,10,11,12]
 
-barrios = ('BRONX', 'BROOKLYN', 'STATEN ISLAND', 'MANHATTAN', 'QUEENS')
+barrios = ('Bronx', 'Brooklyn', 'Staten Island', 'Manhattan', 'Queens')
 
 
 def datos_volumen(barrio, anio):
@@ -112,7 +112,9 @@ with st.sidebar:
 
 st.header('Accidentes')
 try:
-    st_folium(mapa_anio_mes_barrio_api(anio1, mes1, barrio1), width=500, height=500)
+  if barrio1 = 'Staten Island':
+    barrio1 = 'Staten%20Island'  
+  st_folium(mapa_anio_mes_barrio_api(anio1, mes1, barrio1), width=500, height=500)
 except:
     st.write('No hay datos que mostrar.')
 
