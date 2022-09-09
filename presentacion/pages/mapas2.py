@@ -112,7 +112,7 @@ with st.sidebar:
 
 st.header('Accidentes')
 try:
-  if barrio1 = 'Staten Island':
+  if barrio1 == 'Staten Island':
     barrio1 = 'Staten%20Island'  
   st_folium(mapa_anio_mes_barrio_api(anio1, mes1, barrio1), width=500, height=500)
 except:
