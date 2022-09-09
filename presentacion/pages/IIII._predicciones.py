@@ -21,11 +21,11 @@ def vol_enc_cat(vol):
     elif vol == 4:
         return 'muy alto'
 
-data = [['liberado', 'La calle esta libre para circular con menos de 200 autos por hora.'],
-        ['bajo', 'Circulan entre 200 y 400 autos por hora. El trafico sigue sin significar un problema.'],
-        ['moderado', 'La circulación comienza a ser significante con entre 400 y 600 vehiculos por hora.'],
-        ['alto', 'Se recomienda estar alerta. Con volumen alto estamos cerca de los picos de circulación de vehiculos (entre 600 y 900 vehiculos)'],
-        ['muy alto', 'No es recomendable circular por esta calle. El volumen de circulación es de 900 autos o mas (hasta 1700).']]
+data = [['liberado', 'La calle esta libre para circular.'],
+        ['bajo', 'El trafico sigue sin significar un problema.'],
+        ['moderado', 'La circulación comienza a ser significante.'],
+        ['alto', 'Se recomienda estar alerta. Con volumen alto estamos cerca de los picos de circulación de vehiculos'],
+        ['muy alto', 'No es recomendable circular por esta calle.']]
 
 tabla_guia = pd.DataFrame(data, columns=['volumen', 'detalle'])
 
